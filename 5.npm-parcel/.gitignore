@@ -1,0 +1,5 @@
+node_modules/
+
+# because this will create in the server automatically
+.parcel-cache 
+dist
