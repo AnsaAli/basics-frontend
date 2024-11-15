@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Component5 from "./Component5";
 
-const Component3 = () => {
+const Component3 = ({dummy}) => {
   const [list, setList] = useState(["abc", "def", "asz"]);
   const [text, setText] = useState("");
+
   return (
     <div
       
@@ -27,6 +29,7 @@ const Component3 = () => {
         alignItems: "center",
         justifyContent: "center",
       }}>{list}</div>
+       <Component5 dummy={dummy}/>
     </div>
   );
 };

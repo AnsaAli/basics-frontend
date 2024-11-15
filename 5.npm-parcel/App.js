@@ -6,10 +6,13 @@ import Component3 from "./component/Component3";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./component/Error";
 
+
 const App = () => {
+
+  const dummy = 'dummy data';
   return (
     <div>
-      <Component3 />
+      <Component3 dummy = {dummy}/> 
       <Outlet />
     </div>
   );
