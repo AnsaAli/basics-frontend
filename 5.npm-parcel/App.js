@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Component1 from "./component/Component1";
 import Component2 from "./component/Component2";
 import Component3 from "./component/Component3";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./component/Error";
+import Component4 from "./component/Component4";
+import Context from './Context'
 
+//if i want to change the newName from the context, i can warp it in the Provider
 
 const App = () => {
 
   const dummy = 'dummy data';
   return (
-    <div>
+   <Context.Provider value={[newName = 'Ansa']}>
+     <div>
       <Component3 dummy = {dummy}/> 
+     <Component4/>
       <Outlet />
     </div>
+   </Context.Provider>
   );
 };
 
