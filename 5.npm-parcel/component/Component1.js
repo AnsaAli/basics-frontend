@@ -11,7 +11,12 @@ const Component1 = () => {
       console.log('button clicked, value:',value)
     }
   return (
-    <div>
+    <div  style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
+        <h3>Hooks</h3>
         <button onClick={()=> handleClick ()}>Top Selling amount: {value}</button>
     </div>
   )
