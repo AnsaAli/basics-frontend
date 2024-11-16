@@ -1,9 +1,18 @@
 import { useState } from "react";
 import Component5 from "./Component5";
+import { useDispatch } from "react-redux";
+import { addItems } from "../react-redux-store/appReducer";
+
 
 const Component3 = ({dummy}) => {
   const [list, setList] = useState(["abc", "def", "asz"]);
   const [text, setText] = useState("");
+
+  const dispacth = useDispatch()
+  const handleCart = ()=>{
+    //dispacth an action
+   dispacth(addItems('pizza'))
+  }
 
   return (
     <div
@@ -30,6 +39,8 @@ const Component3 = ({dummy}) => {
         justifyContent: "center",
       }}>{list}</div>
        <Component5 dummy={dummy}/>
+
+       <button style={{background:'black', padding:'10px', color:'white'}}  onClick = {handleCart} >ADD TO CART</button>
     </div>
   );
 };
