@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import Component1 from "./component/Component1";
 import Component2 from "./component/Component2";
 import Component3 from "./component/Component3";
+import Component6Dark from "./component/Component6Dark";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./component/Error";
 import Component4 from "./component/Component4";
 import Context from "./Context";
 import appStore from "./react-redux-store/appStore";
 import { Provider } from "react-redux";
+
 
 //if i want to change the newName from the context, i can warp it in the Provider
 
@@ -20,6 +22,7 @@ const App = () => {
         <div>
           <Component3 dummy={dummy} />
           <Component4 />
+          <Component6Dark/>
           <Outlet />
         </div>
       </Context.Provider>
