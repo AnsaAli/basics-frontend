@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Component1 from "./component/Component1";
 import Component2 from "./component/Component2";
@@ -10,22 +10,34 @@ import Component4 from "./component/Component4";
 import Context from "./Context";
 import appStore from "./react-redux-store/appStore";
 import { Provider } from "react-redux";
-
+import COmponent7 from "./component/COmponent7";
+import myContext from './component/myContext'
+import ControlledComponent from "./component/1ControlledComponent";
+import UnControlledComponent from "./component/2UnControlledComponent";
 
 //if i want to change the newName from the context, i can warp it in the Provider
 
 const App = () => {
   const dummy = "dummy data";
+
+  let data = useContext(myContext)
   return (
     <Provider store={appStore}>
-      <Context.Provider value={[(newName = "Ansa")]}>
+      <ControlledComponent/>
+      <UnControlledComponent/>
+      {/* <Context.Provider value={[(newName = "Ansa")]}>
+        <myContext.Provider>
+          {data.anotherName}
         <div>
           <Component3 dummy={dummy} />
           <Component4 />
           <Component6Dark/>
+          <COmponent7/>
           <Outlet />
         </div>
-      </Context.Provider>
+        </myContext.Provider>
+       
+      </Context.Provider> */}
     </Provider>
   );
 };

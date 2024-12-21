@@ -6,7 +6,7 @@ const Component6Dark = () => {
   const [darkMode, setDarkMod] = useState(false);
 
   //this will call unnecessarly
-  //   const getPrime = findNthPrime(num);
+    // const getPrime = findNthPrime(num);
 
   const getPrime = useMemo(() => {findNthPrime(num);
     console.log('calling findPrime')
